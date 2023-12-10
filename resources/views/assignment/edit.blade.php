@@ -6,38 +6,50 @@
     <div class="frame">
         <main class="container">
             <section>
-                <form action="{{ route('assignment/store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('assignment/update', $assignment->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="titlebar">
-                        <h1>Add Product</h1>
+                        <h1>Edit Product</h1>
                     </div>
+                    @if ($errors->any())
+                        <div>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="card">
                        <div>
                             <label>Name</label>
-                            <input type="text" name="name" >
+                            <input type="text" name="name" value="{{ $assignment->name }}">
                             <label>Description (optional)</label>
-                            <textarea cols="10" rows="5" name="description" ></textarea>
+                            <textarea cols="10" rows="5" name="description" value="{{ $assignment->description }}">{{ $assignment->description }}</textarea>
                             <label>Add Image</label>
-                            <img src="" alt="" class="img-product" id="file-preview" />
+                            <img src="{{ asset('images/'.$assignment->image) }}" alt="" class="img-product" id="file-preview" />
+                            <input type="hidden" name="hidden_product_image" value="{{ $assignment->image }}">
                             <input type="file" name="image" accept="image/*" onchange="showFile(event)">
                         </div>
                        <div>
                             <label>Category</label>
-                            <select name="category">
+                            <select  name="category">
                                 @foreach ( json_decode('{"Smartphone": "Smartphone", "Smart TV": "Smart Tv", "Computer": "Computer"}', true) as $optionKey => $optionValue )
-                                <option value="{{ $optionKey }}">{{ $optionValue }}</option>
+                                <option value="{{ $optionKey }}" {{ (isset($assignment->category) && $assignment->category == $optionKey) ? 'selected' : ''}}>{{ $optionValue }}</option>
                                 @endforeach
                             </select>
                             <hr>
                             <label>Inventory</label>
-                            <input type="text" class="input" name="quantity">
+                            <input type="text" class="input" name="quantity" value="{{ $assignment->quantity }}">
                             <hr>
                             <label>Price</label>
-                            <input type="text" class="input" name="price">
+                            <input type="text" class="input" name="price" value="{{ $assignment->price }}">
                        </div>
                     </div>
                     <div class="titlebar">
                         <h1></h1>
+                        <input type="hidden" name="hidden_id" value="{{ $assignment->id }}">
                         <button>Save</button>
                     </div>
                 </form>

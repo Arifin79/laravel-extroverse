@@ -95,7 +95,7 @@
     font-family: var(--font-familly);
     font-size: 1em;
     width: 100%;
-    border: 3px var(--primary-color-dark) solid;
+    border: 1px #bfbfbf solid;
     margin-bottom: 10px;
   }
 
@@ -141,7 +141,7 @@
     padding: 1em 2em;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-  }*/
+  } */
 
   button,
   input[type="submit"],
@@ -169,7 +169,7 @@
   }
 
   .btn-link{
-    margin-top: 1em;
+    margin-top: 2em;
     border: 1px solid #e0e0e0;
     background: #e0e0e0;
     color: var(--text-dark);
@@ -266,6 +266,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    padding-top: 25px;
   }
   .table{
     background: #FFF;
@@ -313,15 +314,8 @@
     border-bottom: 1px solid #e0e0e0;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    margin-top: 3px;
+    margin-top: 1px;
     font-size: 1em;
-  }
-  .search-select-arrow{
-    font-size: 1rem;
-    opacity: 0.7;
-    top: 8px;
-    right: 20px;
-    position: absolute;
   }
   .relative{
     position: relative;
@@ -420,7 +414,7 @@
   border: 1px solid #e0e0e0;
   box-shadow: 0 6px 13px -12px rgb(50 50 93 / 20%), 0 3px 7px -3px rgb(110 110 110 / 10%);
   border-radius: 4px;
-  padding: 20px;
+  padding: 50px;
   }
 
   .alt {
@@ -457,7 +451,7 @@
     padding: 0.6rem 0;
     color: #6a727a;
     background-color: #f1f1f1;
-    grid-template-columns: 50px 1fr 120px 120px 120px;
+    grid-template-columns: 40px 1fr 120px 120px 120px;
     font-family: var(--font-family);
   }
 

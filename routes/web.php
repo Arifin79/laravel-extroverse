@@ -42,6 +42,9 @@ Route::get('/assignment', [AssignmentController::class, 'index'])->middleware('a
 Route::get('/assignment/index', [AssignmentController::class, 'index'])->middleware('auth')->name('assignment/index');
 Route::get('/assignment/create', [AssignmentController::class, 'create'])->name('assignment/create');
 Route::post('/assignment/store', [AssignmentController::class, 'store'])->name('assignment/store');
+Route::put('/assignment/update', [AssignmentController::class, 'update'])->name('assignment/update');
+Route::delete('/assignment/{id}', [AssignmentController::class, 'destroy'])->name('assignment/destroy');
+Route::get('/assignment/edit/{id}', [AssignmentController::class, 'edit'])->name('assignment/edit');
 
 Route::get('/information', [InformationController::class, 'index'])->middleware('auth')->name('information');
 
