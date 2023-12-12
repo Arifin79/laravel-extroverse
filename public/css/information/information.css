@@ -1,0 +1,30 @@
+body{
+    background-color: #f1f1f1;
+    position: absolute;
+    width: 1220px;
+    height: 870px;
+  }
+
+  .text-wrapper-6 {
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    position: relative;
+    top: 80px;
+    left: 270px;
+  }
+
+  .frame {
+      position: relative;
+      width: 1220px;
+      height: 700px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      top: 30px;
+      left: 270px;
+    }
+

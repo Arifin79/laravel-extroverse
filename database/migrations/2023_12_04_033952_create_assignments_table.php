@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->text('description')->nullable();
-            $table->string('category')->nullable();
-            $table->integer('quantity')->nullable();
-            $table->integer('price')->nullable();
+            $table->string('project_name')->nullable();
+            $table->string('project_type')->nullable();
+            $table->string('customer_name')->nullable();
+            $table->string('customer_type')->nullable();
+            $table->date('deadline')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

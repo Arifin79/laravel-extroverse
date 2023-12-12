@@ -52,27 +52,33 @@
                         </div>
                     </form>
                     <div class="table-product-head">
+                        <p>No</p>
+                        <p>Project Name</p>
+                        <p>Project Type</p>
+                        <p>Customer Name</p>
+                        <p>Customer Type</p>
+                        <p>Deadline</p>
                         <p>Image</p>
-                        <p>Name</p>
-                        <p>Category</p>
-                        <p>Inventory</p>
                         <p>Actions</p>
                     </div>
                     <div class="table-product-body">
                         @if (count($assignment) > 0)
                             @foreach ($assignment as $product)
+                                <p>{{ $product->id }}</p>
+                                <p>{{ $product->project_name }}</p>
+                                <p>{{ $product->project_type }}</p>
+                                <p>{{ $product->customer_name }}</p>
+                                <p>{{ $product->customer_type }}</p>
+                                <p>{{ $product->deadline }}</p>
                                 <img src="{{ asset('images/' . $product->image)}}"/>
-                                <p>{{ $product->name }}</p>
-                                <p>{{ $product->category }}</p>
-                                <p>{{ $product->quantity }}</p>
                                 <div style="display: flex">
-                                    <a href="{{ route('assignment/edit', ['id' => $product->id]) }}" class="btn-link btn btn-success" style="margin-top: -0px; padding-bottom:0px; margin-right:15px;">
+                                    <a href="{{ route('assignment/edit', ['id' => $product->id]) }}" class="btn-link btn btn-success" style="margin-top: -0px; padding-bottom:0px; margin-left:50px;">
                                         <i class="fas fa-pencil-alt" ></i>
                                     </a>
                                     <form method="post" action="{{ route('assignment/destroy', ['id' => $product->id]) }}">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn btn-danger" onclick="deleteConfirm(event)" style="margin-top: -0px; padding-bottom:12px;">
+                                        <button class="btn btn-danger" onclick="deleteConfirm(event)" style="margin-top: -0px; padding-bottom:12px; margin-left:15px;">
                                             <i class="far fa-trash-alt"></i>
                                         </button>
                                     </form>

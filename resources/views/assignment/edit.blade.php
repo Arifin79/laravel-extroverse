@@ -23,17 +23,31 @@
                     @endif
                     <div class="card">
                        <div>
-                            <label>Name</label>
+                        <label>Project Name</label>
+                            <input type="text" name="project_name" value="{{ $assignment->project_name}}">
+                            <hr>
+                            <label>Customer Name</label>
+                            <input type="text" name="customer_name" value="{{ $assignment->customer_name }}">
+                            <hr>
+                            {{-- <label>Name</label>
                             <input type="text" name="name" value="{{ $assignment->name }}">
                             <label>Description (optional)</label>
-                            <textarea cols="10" rows="5" name="description" value="{{ $assignment->description }}">{{ $assignment->description }}</textarea>
+                            <textarea cols="10" rows="5" name="description" value="{{ $assignment->description }}">{{ $assignment->description }}</textarea> --}}
                             <label>Add Image</label>
                             <img src="{{ asset('images/'.$assignment->image) }}" alt="" class="img-product" id="file-preview" />
                             <input type="hidden" name="hidden_product_image" value="{{ $assignment->image }}">
                             <input type="file" name="image" accept="image/*" onchange="showFile(event)">
                         </div>
                        <div>
-                            <label>Category</label>
+                            <label>Deadline</label>
+                            <input type="date" name="deadline" value="{{ $assignment->deadline }}"/>
+                            <hr>
+                            <label>Project Type</label>
+                            <input type="text" class="input" name="project_type" value="{{ $assignment->project_type }}">
+                            <hr>
+                            <label>Customer Type</label>
+                            <input type="text" class="input" name="customer_type" value="{{ $assignment->customer_type }}">
+                            {{-- <label>Category</label>
                             <select  name="category">
                                 @foreach ( json_decode('{"Smartphone": "Smartphone", "Smart TV": "Smart Tv", "Computer": "Computer"}', true) as $optionKey => $optionValue )
                                 <option value="{{ $optionKey }}" {{ (isset($assignment->category) && $assignment->category == $optionKey) ? 'selected' : ''}}>{{ $optionValue }}</option>
@@ -44,7 +58,7 @@
                             <input type="text" class="input" name="quantity" value="{{ $assignment->quantity }}">
                             <hr>
                             <label>Price</label>
-                            <input type="text" class="input" name="price" value="{{ $assignment->price }}">
+                            <input type="text" class="input" name="price" value="{{ $assignment->price }}"> --}}
                        </div>
                     </div>
                     <div class="titlebar">

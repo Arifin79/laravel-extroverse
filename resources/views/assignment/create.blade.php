@@ -9,31 +9,29 @@
                 <form action="{{ route('assignment/store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="titlebar">
-                        <h1>Add Product</h1>
+                        <h1>Add Task</h1>
                     </div>
                     <div class="card">
                        <div>
-                            <label>Name</label>
-                            <input type="text" name="name" >
-                            <label>Description (optional)</label>
-                            <textarea cols="10" rows="5" name="description" ></textarea>
+                            <label>Project Name</label>
+                            <input type="text" name="project_name">
+                            <hr>
+                            <label>Customer Name</label>
+                            <input type="text" name="customer_name">
+                            <hr>
                             <label>Add Image</label>
                             <img src="" alt="" class="img-product" id="file-preview" />
                             <input type="file" name="image" accept="image/*" onchange="showFile(event)">
                         </div>
                        <div>
-                            <label>Category</label>
-                            <select name="category">
-                                @foreach ( json_decode('{"Smartphone": "Smartphone", "Smart TV": "Smart Tv", "Computer": "Computer"}', true) as $optionKey => $optionValue )
-                                <option value="{{ $optionKey }}">{{ $optionValue }}</option>
-                                @endforeach
-                            </select>
+                            <label>Deadline</label>
+                            <input type="date" name="deadline" />
                             <hr>
-                            <label>Inventory</label>
-                            <input type="text" class="input" name="quantity">
+                            <label>Project Type</label>
+                            <input type="text" class="input" name="project_type">
                             <hr>
-                            <label>Price</label>
-                            <input type="text" class="input" name="price">
+                            <label>Customer Type</label>
+                            <input type="text" class="input" name="customer_type">
                        </div>
                     </div>
                     <div class="titlebar">

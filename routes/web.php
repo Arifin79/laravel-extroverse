@@ -47,6 +47,12 @@ Route::delete('/assignment/{id}', [AssignmentController::class, 'destroy'])->nam
 Route::get('/assignment/edit/{id}', [AssignmentController::class, 'edit'])->name('assignment/edit');
 
 Route::get('/information', [InformationController::class, 'index'])->middleware('auth')->name('information');
+Route::get('/information/index', [InformationController::class, 'index'])->middleware('auth')->name('information/index');
+Route::get('/information/create', [InformationController::class, 'create'])->name('information/create');
+Route::post('/information/store', [InformationController::class, 'store'])->name('information/store');
+Route::put('/information/update', [InformationController::class, 'update'])->name('information/update');
+Route::delete('/information/{id}', [InformationController::class, 'destroy'])->name('information/destroy');
+Route::get('/information/edit/{id}', [InformationController::class, 'edit'])->name('information/edit');
 
 Route::get('/team', [TeamController::class, 'index'])->middleware('auth')->name('team');
 

@@ -85,7 +85,6 @@
     font-family: var(--font-family);
     width: 100%;
   }
-
   input[type="date"],
   input[type="text"],
   input[type="email"],
@@ -403,8 +402,7 @@
   }
 
   .card{
-    display: grid;
-    grid-template-columns: 1fr minmax(auto, 350px);
+    grid-template-columns: 1fr minmax(auto, 290px);
     grid-gap: 20px;
     color: #6a727a;
     font-family: var(--font-family);
@@ -440,7 +438,7 @@
     font-size: 14px;
     font-weight: 500;
     border-bottom: 1px solid #e0e0e0;
-    grid-template-columns: 50px 170px 150px 180px 130px 120fr 120px 120px;
+    grid-template-columns: 60px 1fr 600px 120px 120px;
     font-family: var(--font-family);
   }
   .table-product-body {
@@ -452,7 +450,7 @@
     padding: 0.6rem 0;
     color: #6a727a;
     background-color: #f1f1f1;
-    grid-template-columns: 50px 170px 150px 180px 130px 120fr 38px 200px;
+    grid-template-columns: 60px 1fr 600px 120px 120px;
     font-family: var(--font-family);
   }
 
