@@ -11,7 +11,7 @@
 <body>
 
     <div>
-        @include('dashboard.partials.sideBar')
+        @include('karyawan.home.partials.sideBar')
         @yield('content');
     </div>
 

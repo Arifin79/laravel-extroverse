@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('login.layout.main')
 
 @section('content')
 

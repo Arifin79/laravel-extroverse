@@ -7,6 +7,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\HomeController;
+
 
 
 
@@ -28,6 +30,16 @@ function set_active($route) {
     }
     return Request::path() == $route ? 'active': '';
 }
+
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+
+    Route::get('/karyawan/home', [HomeController::class, 'index'])->name('home.karyawan');
+});
+
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+
+    Route::get('/dashboard', [HomeController::class, 'adminHome'])->name('home');
+});
 
 Route::get('/', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/', [LoginController::class, 'authentication']);

@@ -50,12 +50,6 @@ class AssignmentController extends Controller
         $product->deadline = $request->deadline;
         $product->image = $file_name;
 
-        // $product->name = $request->name;
-        // $product->description = $request->description;
-        // $product->category = $request->category;
-        // $product->quantity = $request->quantity;
-        // $product->price = $request->price;
-
         $product->save();
         return redirect()->route('assignment/index')->with('success', 'Assignment Added successfully');
 
@@ -86,12 +80,6 @@ class AssignmentController extends Controller
         $assignment->customer_type = $request->customer_type;
         $assignment->deadline = $request->deadline;
         $assignment->image = $file_name;
-
-        // $assignment->name = $request->name;
-        // $assignment->description = $request->description;
-        // $assignment->category = $request->category;
-        // $assignment->quantity = $request->quantity;
-        // $assignment->price = $request->price;
 
         $assignment->save();
 
